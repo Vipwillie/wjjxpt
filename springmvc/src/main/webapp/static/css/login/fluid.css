@@ -1,0 +1,424 @@
+*{
+    font-family: "微软雅黑";
+}
+nav{
+    min-width: 768px;
+}
+.fl{
+    float: left;
+}
+table tr th{
+    text-align: center;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    vertical-align: middle;
+}
+select{
+    outline-style: none;
+    text-align: center;
+    color: #c0c0c0;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #ddd;
+    width: 150px;
+    margin: 0 10px;
+}
+.btn{
+    padding: 2px 25px;
+}
+#navbar-nav{
+    min-width: 500px;
+}
+#navbar-nav li{
+    float: left;
+    display: block;
+    padding: 0 10px;
+    list-style: none;
+}
+#navbar-nav li a{
+    color: #FFFFFF;
+    line-height: 28px;
+}
+#navbar-nav li a:hover{
+    color: #DDDDDD;
+}
+.navbar-border{
+    border-right: 1px solid #FFFFFF;
+}
+.text-right{
+    margin-right: 20px;
+    padding-top: 14px;
+    color: #f00;
+}
+.navbar{
+    height: 50px;
+    background:url("../images/首页/u35.png");
+}
+.slidebar-tit{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 30px;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+    background-color: #6cc3ef;
+}
+
+.panel{
+    border: none;
+}
+.panel-default{
+    border-color: #FFFFFF;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+.panel-default>.panel-heading{
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 16px;
+}
+.container-fluid .row-fluid .span9{
+    position: absolute;
+    margin-left: 220px;
+}
+.container-fluid .row-fluid .span2{
+    position: absolute;
+    left: 35px;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid #ccc;
+    height: 550px;
+    width: 180px;
+}
+.personalInfo{
+    margin-left: -15px;
+    padding-top: 20px;
+    height: 200px;
+    border-bottom: 1px solid #CCCCCC;
+}
+.personalInfo .name{
+    margin-left: 35px;
+}
+.personalInfo .time{
+    margin: 16px 68px;
+}
+.personalInfo .photo{
+    margin: 10px 0 0 105px;
+}
+.personalInfo .photo img{
+    width: 120px;
+}
+.tab-pane{
+    margin-left: 15px;
+}
+.ncontent1-title p{
+    text-align: center;
+    font-size: 16px;
+    width: 38px;
+    color: #C0C0C0;
+    border-bottom: 2px solid #d8d7d7;
+    margin-top: 40px;
+    margin-left: 10px;
+}
+.ncontent1-title1 p{
+    text-align: center;
+    font-size: 16px;
+    width: 78px;
+    color: #C0C0C0;
+    border-bottom: 2px solid #d8d7d7;
+    margin-top: 40px;
+    margin-left: 10px;
+}
+.btnDelete{
+    position: relative;
+    left: 665px;
+    background-color: #DDDDDD;
+}
+.btnAdd{
+    position: relative;
+    left: 686px;
+}
+.btnKeep{
+    position: relative;
+    left: 540px;
+}
+.span2 .nav-tabs {
+    border-bottom: none;
+}
+.nav-tabs{
+    background-color: #fff;
+    min-height:500px;
+}
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:hover,
+.nav-tabs>li.active>a:focus {
+    color: #6cc3ef;
+    cursor: default;
+    background-color: #CCCCCC;
+    border-bottom-color: none;
+}
+
+.nav-tabs>li>a{
+    color:#000;
+    border-radius: 0;
+}
+
+.nav-tabs>li>a:hover{
+    background-color: #CCCCCC;
+}
+.nav-tabs>li{
+    padding-right: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+/*登录页样式*/
+.login-bg-top{
+    width: 100%;
+    height: 335px;
+    background-color: #00BBFF;
+    padding-top: 60px;
+    color: #ffffff;
+    text-align: center;
+}
+.login-bg-top img{
+    width: 50px;
+}
+
+.login{
+    width: 750px;
+    height: 278px;
+    margin: 10px 30%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #9d9d9d;
+    position: absolute;
+}
+.login-left{
+    float: left;
+    margin: 24px 10%;
+    width: 230px;
+    height: 230px;
+    border: 1px dotted #337ab7;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+.login-photo{
+    width: 214px;
+    height: 214px;
+    overflow: hidden;
+    margin: 6px;
+    border-radius: 50%;
+}
+.login-left img{
+    width: 360px;
+    margin-left: -70px;
+}
+.mid-line{
+    float: left;
+    width: 0;
+    height: 170px;
+    margin-top: 54px;
+    border: 1px solid #ddd;
+}
+.login-right{
+    position: relative;
+    float: left;
+    width: 235px;
+    margin: 24px 8.8%;
+}
+.login-right .inputBox{
+    width: 235px;
+    height: 32px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.login-right .inputCon{
+    padding-left: 34px;
+    border: 1px solid #ccc;
+}
+.login-right img{
+    position: absolute;
+}
+.userId-logo{
+    width: 18px;
+    top:45px;
+    left: 6px;
+}
+.userId-del{
+    display: none;
+    width: 16px;
+    top: 48px;
+    right: 5px;
+}
+.userpw-logo{
+    width: 18px;
+    top: 92px;
+    left: 6px;
+}
+.userpw-del{
+    display: none;
+    width: 16px;
+    top: 95px;
+    right: 5px;
+}
+.button{
+    border: none;
+    background-color: #00BBFF;
+    color: #FFFFFF;
+    margin-top: 18px;
+    letter-spacing: 5px;
+    outline-style: none;
+}
+.checkBox{
+    background-color: #ffffff;
+    float: left;
+    padding-left: 4px;
+}
+.login-right span{
+    float: left;
+    color: #9D9D9D;
+}
+.login-right p a{
+    float: right;
+    color: #9D9D9D;
+}
+/*忘记密码*/
+.forgetPwd{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    padding-left: 40px;
+    color: #fff;
+    background-color: #2de4ea;
+}
+.forget_form input{
+    outline-style: none;
+}
+.forget_form{
+    width: 350px;
+    margin-left: 28%;
+    margin-top: 30px;
+    text-align: right;
+}
+.forget_form_msg{
+    width: 235px;
+    height: 32px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #DDDDDD;
+}
+.forget_form_btn{
+    width: 80px;
+    line-height: 25px;
+    border: 1px solid #2de4ea;
+    background-color: #2de4ea;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+.tab-content #profile .container-fluid h3{
+    margin-top: 40px;
+}
+
+.list-groups{
+    padding: 50px 0 0 10px;
+    font-size: 20px;
+}
+.list-group li{
+    padding-left: 60px;
+    list-style: outside none none;
+}
+
+#myframe {
+    display: none;
+    min-height:650px;
+    width: 100%;
+}
+/*xinzeng*/
+#u3026_img {
+    width: 30px;
+    height: 30px;
+}
+#u10_img {
+    position: absolute;
+    top: 3px;
+    width: 2px;
+    height: 36px;
+}
+
+.leaderboard h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
+    line-height: 1;
+    letter-spacing: -1px;
+    color:#92B901;
+}
+.leaderboard{
+    border:2px solid #0088cc;
+    min-height: 600px;
+
+}
+.time h5{
+    margin-bottom: 28px;
+}
+.time h5 a{
+    color: #00BBFF;
+}
+
+
+
+/*10.28*/
+
+.panel-body{
+    padding:10px 0 0 40px;
+}
+.panel-body>ul>li{
+    list-style:none;
+}
+.panel-body ul li a{
+    text-decoration: none;
+    line-height: 26px;
+}
+.panel-body ul li a:hover,.panel-body ul li a:focus{
+    color: #00BBFF;
+}
+a,a:hover{
+    text-decoration: none;
+    color: #000000;
+}
+.img{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+.span9 .tab-content{
+    width: 900px;
+    min-height: 550px;
+    left: 310px;
+    border:1px solid #ddd;
+}
+#ncontent0-2{
+    height: 45px;
+}
+
+#ncontent0-2-title{
+    clear: both;
+    font-size: 20px;
+    color: #0bf;
+    padding:20px;
+}
+
+.login-bg-bottom{
+    width: 100%;
+    height: 180px;
+    background-color: #eee;
+    text-align: center;
+    margin-top: 350px;
+    padding-top: 120px;
+}

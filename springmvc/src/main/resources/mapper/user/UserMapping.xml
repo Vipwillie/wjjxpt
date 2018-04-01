@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.willie.springmvc.domain.User">
+
+    <!--根据用户编码查询用户-->
+    <select id="getUser" parameterType="java.lang.String" resultType="com.willie.springmvc.domain.User">
+        SELECT * FROM user WHERE sid=#{sid};
+    </select>
+
+    <!--查询所有用户-->
+    <select id="findAll" resultType="java.util.List">
+        SELECT * FROM user;
+    </select>
+
+    <!--用户存在-->
+    <select id="isExist" parameterType="java.lang.String" resultType="java.lang.Long">
+        SELECT COUNT (1) FROM user u WHERE u.name = #{name}
+    </select>
+
+    <!--根据用户名查询用户-->
+    <select id="findUserByAccount" parameterType="java.lang.String" resultType="com.willie.springmvc.domain.User">
+        SELECT * FROM user AS u WHERE u.name = #{name}
+    </select>
+
+    <!--查询用户-->
+    <select id="findUser" parameterType="java.util.HashMap" resultType="com.willie.springmvc.domain.User">
+        SELECT * FROM user AS u WHERE 1 = 1
+        <if test="sid != null">
+            AND u.sid = #{sid}
+        </if>
+
+        <if test="name != null">
+            AND u.name LIKE #{name}
+        </if>
+    </select>
+
+    <!--增加用户-->
+
+    <!--修改用户-->
+
+    <!--删除用户-->
+
+</mapper>
