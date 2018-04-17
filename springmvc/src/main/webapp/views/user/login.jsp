@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>广州武警教学系统</title>
@@ -46,7 +46,7 @@
 
     <%--底部--%>
     <div class="login-bg-bottom">
-        <p>copyringht @ 2016-2017EPTIME Cn,ALL Rights Reserved,教学管理系统v1.0</p>
+        <p>copyright @ 2016-2017EPTIME Cn,ALL Rights Reserved,教学管理系统v1.0</p>
     </div>
 
     <%--js--%>
