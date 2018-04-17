@@ -12,15 +12,16 @@
         <property name="unauthorizedUrl" value=""/>
         <property name="filterChainDefinitions">
             <value>
-                <!--允许访问-->
+                <!--****************不需要权限的*****************-->
+                /=anon<!--应用的根-->
                 /static/**=anon<!--静态资源-->
                 /login=anon <!--登录-->
                 /logout=anon<!--退出-->
                 /index=anon <!--登录页-->
-                <!--不需要权限的-->
-                /unauthorized=anon
-                <!--需要权限才能访问-->
+                <!--****************不需要权限的******************-->
+                <!--*****************需要权限才能访问**************-->
                 /authenticated=authc
+                <!--*****************需要权限才能访问**************-->
             </value>
         </property>
     </bean>
@@ -54,12 +55,12 @@
         <property name="sessionDAO" ref="sessionDAO"/>
     </bean>
 
-    <bean id="myRealm" class="com.willie.springmvc.base.MyRealm"/>
+    <bean id="baseRealm" class="com.willie.springmvc.base.BaseRealm"/>
 
     <!--安全管理器-->
     <bean id="securityManager"
           class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-        <property name="realm" ref="myRealm"/>
+        <property name="realm" ref="baseRealm"/>
         <property name="sessionManager" ref="sessionManager"/>
     </bean>
 

@@ -16,7 +16,7 @@ import java.util.Arrays;
  * <p>创  建 人:Willie</p>
  * <p>创建 时间:2018/2/2 16:01</p>
  */
-public class MyRealm extends AuthorizingRealm {
+public class BaseRealm extends AuthorizingRealm {
     @Autowired
     private UserService userService;
 
