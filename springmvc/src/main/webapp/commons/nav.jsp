@@ -12,7 +12,7 @@
             <ul id="navbar-nav">
                 <li>
                     <a href="#">
-                        <img id="u3026_img" class="img " src="${pageContext.request.contextPath}/images/login/u19.jpg"/>
+                        <img id="u3026_img" class="img " src="${CTX_PATH}/images/login/u19.jpg"/>
                     </a>
                 </li>
                 <li class="navbar-border">

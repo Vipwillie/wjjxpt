@@ -29,8 +29,8 @@
     <mvc:resources mapping="/static/css/**" location="static/css/"/>
     <mvc:resources mapping="/static/images/**" location="static/images/"/>
 
-    <!-- 启用shrio授权注解 -->
     <aop:config proxy-target-class="true"/>
+    <!-- 启用shrio授权注解 -->
     <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
         <property name="securityManager" ref="securityManager"/>
     </bean>

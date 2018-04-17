@@ -15,7 +15,7 @@
                     <div class="panel-heading" id="personal" style="background-color: #EEEEEE;">
                         <a data-parent="#accordion"
                            href="#collapse1">
-                            <img src="${pageContext.request.contextPath}/images/index/u39.png" class="img">
+                            <img src="${CTX_PATH}/images/index/u39.png" class="img">
                             个人中心
                         </a>
                     </div>
@@ -24,7 +24,7 @@
                     <div class="panel-heading">
                         <a data-parent="#accordion"
                            href="#collapse2">
-                            <img src="${pageContext.request.contextPath}/images/index/u27.png" class="img">
+                            <img src="${CTX_PATH}/images/index/u27.png" class="img">
                             信息输入
                         </a>
                     </div>
@@ -46,7 +46,6 @@
                                 <li>
                                     <a href="#checkGrade" aria-controls="home" role="tab" data-toggle="tab">考核成绩</a>
                                 </li>
-
                             </ul>
                         </div>
                     </div>
@@ -55,7 +54,7 @@
                     <div class="panel-heading">
                         <a data-parent="#accordion"
                            href="#collapse3">
-                            <img src="${pageContext.request.contextPath}/images/index/u29.png" class="img">
+                            <img src="${CTX_PATH}/images/index/u29.png" class="img">
                             教学查询
                         </a>
                     </div>
@@ -88,7 +87,7 @@
                     <div class="panel-heading">
                         <a data-parent="#accordion"
                            href="#collapse4">
-                            <img src="${pageContext.request.contextPath}/images/index/u31.png" class="img">
+                            <img src="${CTX_PATH}/images/index/u31.png" class="img">
                             统计分析
                         </a>
                     </div>
