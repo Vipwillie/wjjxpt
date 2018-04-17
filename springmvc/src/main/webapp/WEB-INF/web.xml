@@ -17,23 +17,6 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
         </listener-class>
     </listener>
 
-    <!--配置DispatcherServlet-->
-    <servlet>
-        <servlet-name>springDispatcherServlet</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet
-        </servlet-class>
-        <!--配置DispatcherServlet的一个初始化参数：配置springMVC配置文件的位置和名称-->
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:spring-mvc.xml</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>springDispatcherServlet</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
-
     <filter>
         <filter-name>shiroFilter</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy
@@ -73,4 +56,22 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
         <filter-name>CharacterEncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!--配置DispatcherServlet-->
+    <servlet>
+        <servlet-name>springDispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <!--配置DispatcherServlet的一个初始化参数：配置springMVC配置文件的位置和名称-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring-mvc.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springDispatcherServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
 </web-app>
