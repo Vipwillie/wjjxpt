@@ -16,10 +16,10 @@
                 /=anon<!--应用的根-->
                 /static/**=anon<!--静态资源-->
                 /login=anon <!--登录-->
-                /logout=anon<!--退出-->
                 /index=anon <!--登录页-->
                 <!--****************不需要权限的******************-->
                 <!--*****************需要权限才能访问**************-->
+                /logout=logout<!--退出-->
                 /authenticated=authc
                 <!--*****************需要权限才能访问**************-->
             </value>
@@ -29,6 +29,14 @@
     <!--会话ID生成器-->
     <bean id="sessionIdGenerator"
           class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator"/>
+
+    <!--RememberMe配置-->
+    <bean id="sessionIdCookie"
+          class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="rememberMe"/>
+        <property name="httpOnly" value="true"/>
+        <property name="maxAge" value="2592000"/><!--30天-->
+    </bean>
 
     <!--会话DAO-->
     <bean id="sessionDAO"
@@ -53,6 +61,8 @@
         <property name="sessionValidationScheduler"
                   ref="sessionValidationScheduler"/>
         <property name="sessionDAO" ref="sessionDAO"/>
+        <property name="sessionIdCookieEnabled" value="true"/>
+        <property name="sessionIdCookie" value="sessionIdCookie"/>
     </bean>
 
     <bean id="baseRealm" class="com.willie.springmvc.base.BaseRealm"/>
