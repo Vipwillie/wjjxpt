@@ -28,11 +28,11 @@ public class BaseControllerExceptionHandler {
     /**
      * 处理Controller中的方法
      *
-     * @param pjp
-     * @return
+     * @param pjp 切入连接点
+     * @return 环绕通知
      */
     @Around("cutPoint()")
-    public Object handlerControllerMethod(ProceedingJoinPoint pjp) {
+    public Result<?> handlerControllerMethod(ProceedingJoinPoint pjp) {
         Result<?> result = null;
         try {
             long startTime = System.currentTimeMillis();
@@ -49,9 +49,9 @@ public class BaseControllerExceptionHandler {
     /**
      * 异常处理
      *
-     * @param pjp
-     * @param throwable
-     * @return
+     * @param pjp 切入连接点
+     * @param throwable 异常
+     * @return 异常通知
      */
     @AfterThrowing(value = "cutPoint()", throwing = "throwable")
     public Result<?> handlerException(ProceedingJoinPoint pjp, Throwable throwable) {
