@@ -63,19 +63,6 @@
         <aop:advisor advice-ref="txAdvice"
                      pointcut="execution(* com.willie.springmvc.service.*.*(..))"/>
     </aop:config>
-
-    <!--通过aop统一处理Controller层返回值和异常-->
+    <!--开启aop注解-->
     <aop:aspectj-autoproxy/>
-    <bean id="exceptionHandler"
-          class="com.willie.springmvc.base.aop.BaseExceptionHandler"/>
-
-    <aop:config>
-        <aop:aspect ref="exceptionHandler">
-            <aop:pointcut id="target"
-                          expression="execution(* com.willie.springmvc.controller.*.*(..))"/>
-            <aop:around method="handlerControllerMethod" pointcut-ref="target"/>
-            <aop:after-throwing method="handlerException" pointcut-ref="target"
-                                throwing="throwable"/>
-        </aop:aspect>
-    </aop:config>
 </beans>
