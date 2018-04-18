@@ -1,7 +1,8 @@
 package com.willie.springmvc.base.aop;
 
-import com.willie.springmvc.base.Result;
+import com.willie.springmvc.base.response.Result;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -17,8 +18,8 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
-public class BaseExceptionHandler {
-    private static final Logger logger = LoggerFactory.getLogger(BaseExceptionHandler.class);
+public class BaseControllerExceptionHandler {
+    private static final Logger logger = LoggerFactory.getLogger(BaseControllerExceptionHandler.class);
 
     @Pointcut("execution(* com.willie.springmvc.controller.*.*.*(..))")
     public void cutPoint() {
@@ -27,19 +28,20 @@ public class BaseExceptionHandler {
     /**
      * 处理Controller中的方法
      *
-     * @param proceedingJoinPoint
+     * @param pjp
      * @return
      */
     @Around("cutPoint()")
-    public Object handlerControllerMethod(ProceedingJoinPoint proceedingJoinPoint) {
-        long startTime = System.currentTimeMillis();
+    public Object handlerControllerMethod(ProceedingJoinPoint pjp) {
         Result<?> result = null;
         try {
-            result = (Result<?>) proceedingJoinPoint.proceed();
+            long startTime = System.currentTimeMillis();
+            result = (Result<?>) pjp.proceed();
+            Signature signature = pjp.getSignature();
             long endTime = System.currentTimeMillis();
-            logger.info("used time:[{}]毫秒", endTime - startTime);
+            logger.info("Controller:[{}],执行方法[{}],耗时:[{}]毫秒", new Object[]{signature.getDeclaringTypeName(), signature.getName(), endTime - startTime});
         } catch (Throwable throwable) {
-            result = handlerException(proceedingJoinPoint, throwable);
+            result = handlerException(pjp, throwable);
         }
         return result;
     }
@@ -51,12 +53,14 @@ public class BaseExceptionHandler {
      * @param throwable
      * @return
      */
-    @AfterThrowing(value = "cutPoint()",throwing="throwable")
-    private Result<?> handlerException(ProceedingJoinPoint pjp, Throwable throwable) {
+    @AfterThrowing(value = "cutPoint()", throwing = "throwable")
+    public Result<?> handlerException(ProceedingJoinPoint pjp, Throwable throwable) {
         Result<?> result = new Result();
         //已知异常
         result.setMessage(throwable.getLocalizedMessage());
         result.setCode(Result.FAIL);
+        Signature signature = pjp.getSignature();
+        logger.error("Controller:[{}],方法[{}]出现异常，异常信息:[{}]", new Object[]{signature.getDeclaringTypeName(), signature.getName(), throwable.getLocalizedMessage()});
         return result;
     }
 }

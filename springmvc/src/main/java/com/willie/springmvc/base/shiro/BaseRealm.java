@@ -1,5 +1,6 @@
-package com.willie.springmvc.base;
+package com.willie.springmvc.base.shiro;
 
+import com.willie.springmvc.base.util.security.MD5Util;
 import com.willie.springmvc.domain.User;
 import com.willie.springmvc.service.user.UserService;
 import org.apache.shiro.authc.*;
@@ -47,12 +48,15 @@ public class BaseRealm extends AuthorizingRealm {
         //这里需要对传过来的密码进行加密处理,然后对比密码进行校验,具体操作暂且省略
 
         User user = userService.findUserByAccount(username);//取得用户名
+//        String sale = user.getSale();//盐
 
-        if (!user.getName().equals(username)) {
+        if (user == null) {
             throw new UnknownAccountException();//用户错误
         }
 
-        if (!user.getPassword().equals(password)) {
+        String encryptedPassword = MD5Util.Md5Hash(password);
+
+        if (!user.getPassword().equals(encryptedPassword)) {
             throw new IncorrectCredentialsException();//密码错误
         }
 

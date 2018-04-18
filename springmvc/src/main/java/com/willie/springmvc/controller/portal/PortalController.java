@@ -1,6 +1,6 @@
 package com.willie.springmvc.controller.portal;
 
-import com.willie.springmvc.base.ExceptionTypeEnum;
+import com.willie.springmvc.base.exception.ExceptionTypeEnum;
 import com.willie.springmvc.controller.base.BaseController;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;

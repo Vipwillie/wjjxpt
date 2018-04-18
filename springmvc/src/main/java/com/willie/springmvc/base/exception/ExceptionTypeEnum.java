@@ -1,4 +1,4 @@
-package com.willie.springmvc.base;
+package com.willie.springmvc.base.exception;
 
 /**
  * <p>功能 描述:异常类型</p>

@@ -1,7 +1,7 @@
 package com.willie.springmvc.controller.base;
 
-import com.willie.springmvc.base.Result;
-import com.willie.springmvc.base.ResultType;
+import com.willie.springmvc.base.response.Result;
+import com.willie.springmvc.base.response.ResultType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  * <p>创建 时间:2018/2/1 14:55</p>
  */
 public class BaseController {
-    protected Logger logger = LoggerFactory.getLogger(getClass());
+    protected static Logger logger = LoggerFactory.getLogger(BaseController.class);
 
     /**
      * 操作成功返回结果

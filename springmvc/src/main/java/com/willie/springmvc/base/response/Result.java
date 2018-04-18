@@ -1,4 +1,4 @@
-package com.willie.springmvc.base;
+package com.willie.springmvc.base.response;
 
 import java.io.Serializable;
 

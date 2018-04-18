@@ -7,20 +7,19 @@
     <bean id="shiroFilter"
           class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
-        <property name="loginUrl" value=""/>
-        <property name="successUrl" value=""/>
-        <property name="unauthorizedUrl" value=""/>
+        <property name="loginUrl" value="/login"/>
+        <property name="successUrl" value="/index"/>
         <property name="filterChainDefinitions">
             <value>
                 <!--****************不需要权限的*****************-->
                 /=anon<!--应用的根-->
                 /static/**=anon<!--静态资源-->
-                /login=anon <!--登录-->
+                /login/**=anon <!--登录-->
                 /index=anon <!--登录页-->
                 <!--****************不需要权限的******************-->
                 <!--*****************需要权限才能访问**************-->
                 /logout=logout<!--退出-->
-                /authenticated=authc
+                /**=authc
                 <!--*****************需要权限才能访问**************-->
             </value>
         </property>
@@ -65,7 +64,7 @@
         <property name="sessionIdCookie" value="sessionIdCookie"/>
     </bean>
 
-    <bean id="baseRealm" class="com.willie.springmvc.base.BaseRealm"/>
+    <bean id="baseRealm" class="com.willie.springmvc.base.shiro.BaseRealm"/>
 
     <!--安全管理器-->
     <bean id="securityManager"

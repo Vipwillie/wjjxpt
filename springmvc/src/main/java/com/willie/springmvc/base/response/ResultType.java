@@ -1,4 +1,4 @@
-package com.willie.springmvc.base;
+package com.willie.springmvc.base.response;
 
 /**
  * <p>功能 描述:返回结果类型</p>
