@@ -39,7 +39,7 @@ public class PortalController extends BaseController {
      * @return
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@RequestParam(value = "account", required = true) String account, @RequestParam(value = "password", required = true) String password, @RequestParam(value = "rememberMe") Boolean rememberMe, Model model) {
+    public String login(@RequestParam(value = "account", required = true) String account, @RequestParam(value = "password", required = true) String password, @RequestParam(value = "rememberMe",required = false) boolean rememberMe, Model model) {
         if (!StringUtils.hasText(account)) {
             logger.info("帐号为空！");
             model.addAttribute("msg", "登录帐号不能为空！");

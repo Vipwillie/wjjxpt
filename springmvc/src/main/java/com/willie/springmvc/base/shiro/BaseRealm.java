@@ -61,6 +61,6 @@ public class BaseRealm extends AuthorizingRealm {
         }
 
         //如果身份验证成功，返回一个AuthenticationInfo
-        return new SimpleAuthenticationInfo(username, password, getName());
+        return new SimpleAuthenticationInfo(user.getName(), encryptedPassword, getName());
     }
 }
