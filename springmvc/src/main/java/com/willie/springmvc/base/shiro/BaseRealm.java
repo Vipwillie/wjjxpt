@@ -3,11 +3,14 @@ package com.willie.springmvc.base.shiro;
 import com.willie.springmvc.base.util.security.MD5Util;
 import com.willie.springmvc.domain.User;
 import com.willie.springmvc.service.user.UserService;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Arrays;
@@ -60,6 +63,9 @@ public class BaseRealm extends AuthorizingRealm {
             throw new IncorrectCredentialsException();//密码错误
         }
 
+        Subject subject = SecurityUtils.getSubject();
+        Session session = subject.getSession();
+        session.setAttribute("CURRENT_USER", user);
         //如果身份验证成功，返回一个AuthenticationInfo
         return new SimpleAuthenticationInfo(user.getName(), encryptedPassword, getName());
     }
